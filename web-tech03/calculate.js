@@ -1,15 +1,15 @@
 // Function to calculate price based on width, height, and thickness
 function calculate(width, height, thickness) {
-    let price;
-    const colorInput = document.getElementById("color").value;
+    let price; // block-scoped
+    const colorInput = document.getElementById("color").value; // block-scoped
 
     // Check if the glass color is grey (R, G, B values are the same)
-    const r = parseInt(colorInput.substr(1, 2), 16);
-    const g = parseInt(colorInput.substr(3, 2), 16);
-    const b = parseInt(colorInput.substr(5, 2), 16);
+    const r = parseInt(colorInput.substr(1, 2), 16); // block-scoped
+    const g = parseInt(colorInput.substr(3, 2), 16); // block-scoped
+    const b = parseInt(colorInput.substr(5, 2), 16); // block-scoped
     const isGrey = (r === g && g === b);
 
-    // Determine the price based on color
+    // Determine the price based on color (shade of grey or not)
     if (isGrey) {
         price = (width * height * thickness) / 100;
     } else {
@@ -40,6 +40,8 @@ function update() {
 document.getElementById("width").addEventListener("input", update);
 document.getElementById("height").addEventListener("input", update);
 document.getElementById("color").addEventListener("input", update);
+// 'forEach' loop adds a 'change' event listener to each radio button in the thickness group
+// This triggers update() whenever the selected thickness changes
 document.querySelectorAll('input[name="thickness"]').forEach(radio => {
     radio.addEventListener("change", update);
 });
