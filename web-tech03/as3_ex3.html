@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glass Order Form</title>
+</head>
+<body>
+    <h1>Your Glass Order</h1>
+    
+    <form action="mailto:yourmail@edu.aau.at?subject=Glass%20Order" method="post" enctype="text/plain">
+        
+        <!-- Contact Information -->
+        <fieldset>
+            <legend><h2>Kontaktinformationen</h2></legend>
+            
+            <label for="title">Titel:</label>
+            <select id="title" name="title" required>
+                <option value="">Wählen</option>
+                <option value="Herr">Herr</option>
+                <option value="Frau">Frau</option>
+                <option value="Doktor">Doktor</option>
+                <option value="Professor">Professor</option>
+                <option value="Magister">Magister</option>
+            </select><br><br>
+            
+            <label for="name">Vollständiger Name:</label>
+            <input type="text" id="name" name="name" placeholder="Max Mustermann" required><br><br>
+            
+            <label for="address">Adresse:</label>
+            <textarea id="address" name="address" placeholder="Mustergasse 1, Stadt" rows="2" required></textarea><br><br>
+            
+            <label for="email">E-Mail-Adresse:</label>
+            <input type="email" id="email" name="email" placeholder="beispiel@mail.com" required><br><br>
+            
+            <label for="phone">Mobilnummer:</label>
+            <input type="tel" id="phone" name="phone" placeholder="+431231234" pattern="^\+?\d{1,4}\d{1,14}$" required><br><br>
+        </fieldset><br>
+        
+        <!-- Glass Specifications -->
+        <fieldset>
+            <legend><h2>Glas-Spezifikationen</h2></legend>
+            
+            <label for="quantity">Anzahl der Scheiben:</label>
+            <select id="quantity" name="quantity" required>
+                <option value="">Wählen</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+            </select><br><br>
+            
+            <label for="width">Breite (cm):</label>
+            <input type="number" id="width" name="width" min="1" max="200" placeholder="z.B. 100" required><br><br>
+            
+            <label for="height">Höhe (cm):</label>
+            <input type="number" id="height" name="height" min="1" max="200" placeholder="z.B. 150" required><br><br>
+            
+            <label for="color">Glasfarbe (RGB):</label>
+            <input type="color" id="color" name="color" required><br><br>
+            
+            <label>Dicke:</label><br>
+            <input type="radio" id="thickness4" name="thickness" value="4mm" required>
+            <label for="thickness4">4mm</label><br>
+            <input type="radio" id="thickness6" name="thickness" value="6mm" required>
+            <label for="thickness6">6mm</label><br>
+            <input type="radio" id="thickness8" name="thickness" value="8mm" required>
+            <label for="thickness8">8mm</label><br>
+            <input type="radio" id="thickness12" name="thickness" value="12mm" required>
+            <label for="thickness12">12mm</label><br><br>
+        </fieldset><br>
+        
+        <!-- Comments -->
+        <fieldset>
+            <legend><h2>Kommentare</h2></legend>
+            <label for="comments">Kommentare (optional, max 512 Zeichen):</label><br>
+            <textarea id="comments" name="comments" placeholder="Geben Sie zusätzliche Details ein" maxlength="512"></textarea><br><br>
+        </fieldset><br>
+        
+        <!-- Form Buttons -->
+        <input type="submit" value="Bestellung absenden">
+        <input type="reset" value="Formular zurücksetzen">
+    </form>
+</body>
+</html>

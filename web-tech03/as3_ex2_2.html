@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercise 2 - DOM Operations</title>
+</head>
+<body>
+
+  <!-- HTML-Inhalt von 2.1 -->
+  <a href="https://en.wikipedia.org" target="_new">
+    <img src="https://cdn4.iconfinder.com/data/icons/world-flags-rounded/900/uk_united_kingdom_britain_british_flag-512.png">
+  </a>
+  <a href="https://de.wikipedia.org" target="_new">
+    <img src="https://cdn3.iconfinder.com/data/icons/flags-37/300/austria-national-world-512.png">
+  </a>
+  <a href="https://ja.wikipedia.org" target="_new">
+    <img src="https://cdn1.iconfinder.com/data/icons/flags-free/64/Flags_Flag_Country_National_Symbol_Japan-512.png">
+  </a>
+
+  <!-- JavaScript-Code von 2.2 -->
+  <script>
+    // Select the second <a> element on the page 
+    var link = document.getElementsByTagName("a")[1];
+
+    // Log the "href" attribute value of the selected link
+    console.log(link.attributes["href"].nodeValue);
+
+    // Log the "href" attribute value using getAttributeNode
+    console.log(link.getAttributeNode("href").nodeValue);
+
+    // Log the full URL of the "href" attribute
+    console.log(link.href);
+
+    // Log the first child node of link (eg. the first content in the <a> tag)
+    console.log(link.firstChild);
+
+    // Log the node type of the first attribute (2 represents ATTRIBUTE_NODE)
+    console.log(link.attributes[0].nodeType);
+
+    // Log the node type of the first child node (3 represents TEXT_NODE)
+    console.log(link.firstChild.nodeType);
+
+    // Log the name of the link's parent node (should be BODY)
+    console.log(link.parentNode.nodeName);
+
+    // Log the name of the parent node of the link's last child (should be 'A')
+    console.log(link.lastChild.parentNode.nodeName);
+
+    // Log the total number of attributes in the selected link
+    console.log(link.attributes.length);
+
+    // JavaScript-Code von 2.3
+    // Removing the 'target' attribute adjusts the link to open in the same window or tab, 
+    // instead of a new tab (which would normally be triggered by target="_blank").
+
+    // Select the third <a> element on the page
+    var link = document.getElementsByTagName("a").item(2);
+
+    // Remove the 'target' attribute from the selected link
+    link.removeAttribute("target");
+
+  </script>
+
+</body>
+</html>
