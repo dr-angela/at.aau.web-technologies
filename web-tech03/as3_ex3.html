@@ -8,7 +8,7 @@
 <body>
     <h1>Your Glass Order</h1>
     
-    <form action="mailto:yourmail@edu.aau.at?subject=Glass%20Order" method="post" enctype="text/plain">
+    <form action="mailto:angeladr@edu.aau.at?subject=Glass%20Order" method="post" enctype="text/plain">
         
         <!-- Contact Information -->
         <fieldset>
@@ -66,14 +66,18 @@
             <input type="color" id="color" name="color" required><br><br>
             
             <label>Dicke:</label><br>
-            <input type="radio" id="thickness4" name="thickness" value="4mm" required>
+            <input type="radio" id="thickness4" name="thickness" value="4" required>
             <label for="thickness4">4mm</label><br>
-            <input type="radio" id="thickness6" name="thickness" value="6mm" required>
+            <input type="radio" id="thickness6" name="thickness" value="6" required>
             <label for="thickness6">6mm</label><br>
-            <input type="radio" id="thickness8" name="thickness" value="8mm" required>
+            <input type="radio" id="thickness8" name="thickness" value="8" required>
             <label for="thickness8">8mm</label><br>
-            <input type="radio" id="thickness12" name="thickness" value="12mm" required>
+            <input type="radio" id="thickness12" name="thickness" value="12" required>
             <label for="thickness12">12mm</label><br><br>
+
+            <!-- Added read-only price input -->
+            <label for="price">Preis:</label>
+            <input type="text" id="price" name="price" readonly placeholder="-" /><br><br>
         </fieldset><br>
         
         <!-- Comments -->
@@ -87,5 +91,6 @@
         <input type="submit" value="Bestellung absenden">
         <input type="reset" value="Formular zurücksetzen">
     </form>
+    <script src="calculate.js"></script>
 </body>
 </html>
