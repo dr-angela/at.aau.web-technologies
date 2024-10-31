@@ -19,7 +19,7 @@ function calculate(width, height, thickness) {
     return price.toFixed(2); // Format to 2 decimal places
 }
 
-// Function to update the price field in the form
+// function update: checks if all input fields are valid and, if so, calculates the price and updates the form.
 function update() {
     const width = document.getElementById("width").value;
     const height = document.getElementById("height").value;
@@ -28,11 +28,11 @@ function update() {
 
     // Check if all required inputs have valid values
     if (width && height && thicknessInput && document.getElementById("color").checkValidity()) {
-        const thickness = parseFloat(thicknessInput.value);
-        const price = calculate(width, height, thickness);
-        priceField.value = `${price} €`; // Update price field
+        const thickness = parseFloat(thicknessInput.value); // thickness into number
+        const price = calculate(width, height, thickness); // call of calculate function
+        priceField.value = `${price} €`; // update price field
     } else {
-        priceField.value = "-"; // Show hyphen if values are invalid
+        priceField.value = "-"; // Show hyphen if values are invalid or incomplete
     }
 }
 
@@ -40,6 +40,7 @@ function update() {
 document.getElementById("width").addEventListener("input", update);
 document.getElementById("height").addEventListener("input", update);
 document.getElementById("color").addEventListener("input", update);
+
 // 'forEach' loop adds a 'change' event listener to each radio button in the thickness group
 // This triggers update() whenever the selected thickness changes
 document.querySelectorAll('input[name="thickness"]').forEach(radio => {

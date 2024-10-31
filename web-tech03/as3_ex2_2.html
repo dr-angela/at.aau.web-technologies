@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -20,46 +20,52 @@
 
   <!-- JavaScript-Code von 2.2 -->
   <script>
-    // Select the second <a> element on the page 
+    // Select the second <a> element on the page (austrian flag) and save it in var link
     var link = document.getElementsByTagName("a")[1];
 
-    // Log the "href" attribute value of the selected link
+    // dom-operations - methods are part of dom-api (Document Object Model Application Programming Interface)
+    
+    // 1 - Log the "href" attribute value of the selected link (hypertext reference)
     console.log(link.attributes["href"].nodeValue);
 
-    // Log the "href" attribute value using getAttributeNode
+    // 2 - Log the "href" attribute value using getAttributeNode
     console.log(link.getAttributeNode("href").nodeValue);
 
-    // Log the full URL of the "href" attribute
+    // 3 - Log the full URL of the "href" attribute (incl. protocol https://)
     console.log(link.href);
 
-    // Log the first child node of link (eg. the first content in the <a> tag)
+    // 4 - Log the first child node of link (should be the <img> element, but is an empty string )
     console.log(link.firstChild);
 
-    // Log the node type of the first attribute (2 represents ATTRIBUTE_NODE)
+    // 4.1 Gibt das erste <img> Element aus
+    console.log(link.children[0]); 
+
+    // 5 - Log the node type of the first attribute (2 represents ATTRIBUTE_NODE)
     console.log(link.attributes[0].nodeType);
 
-    // Log the node type of the first child node (3 represents TEXT_NODE)
+    // 6 - Log the node type of the first child node (3 represents TEXT_NODE)
     console.log(link.firstChild.nodeType);
 
-    // Log the name of the link's parent node (should be BODY)
+    // 7 - Log the name of the link's parent node (should be BODY)
     console.log(link.parentNode.nodeName);
 
-    // Log the name of the parent node of the link's last child (should be 'A')
+    // 8 - Log the name of the parent node of the link's last child (should be 'A')
+    // HTML-Tags werden in Großbuchstaben als nodeName ausgegeben
     console.log(link.lastChild.parentNode.nodeName);
 
-    // Log the total number of attributes in the selected link
+    // 9 - Log the total number of attributes in the selected link
     console.log(link.attributes.length);
 
-    // JavaScript-Code von 2.3
-    // Removing the 'target' attribute adjusts the link to open in the same window or tab, 
-    // instead of a new tab (which would normally be triggered by target="_blank").
+    // 2.3 DOMContentLoaded event listener ensures that the target 
+    // attribute of the third link is removed as soon as the DOM structure is fully loaded
 
-    // Select the third <a> element on the page
-    var link = document.getElementsByTagName("a").item(2);
+    document.addEventListener("DOMContentLoaded", function() {
+        // Select the third <a> element on the page (japan flag)
+        var link = document.getElementsByTagName("a").item(2);
 
-    // Remove the 'target' attribute from the selected link
-    link.removeAttribute("target");
-
+        // Remove the 'target' attribute from the selected link
+        link.removeAttribute("target");
+    });
   </script>
 
 </body>
