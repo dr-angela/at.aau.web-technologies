@@ -1,0 +1,191 @@
+<html lang="de">
+
+<head>
+	<title>CSS in Action</title>
+	<style>
+		/** flex guide: https://css-tricks.com/snippets/css/a-guide-to-flexbox/ **/
+
+		html,
+		body {
+			margin: 0px;
+			padding: 0px;
+			height: 100%;
+		}
+
+		body {
+			display: flex;
+			flex-direction: column;
+			/** the content stretches among the available space (footer at the bottom) **/
+			align-items: stretch;
+		}
+
+		div.content {
+			/** This div is allowed to grow until all the required space is used **/
+			flex-grow: 1;
+		}
+
+		header, nav, footer {
+			/** These elements are not allowed to shrink more then neccesary **/
+			flex-shrink: 0;
+		}		
+
+		/** header **/
+		header {
+			background-color: rgb(187, 204, 232);
+			display: flex;
+		}
+
+		header>h1 {
+			/** em	Relative to the font-size of the element (2em means 2 times the size of the current font) **/
+			font-family: verdana;
+			font-size: 2em;
+			margin: 10px;
+			/** flex: <positive-number> Makes the flex item flexible and sets the flex basis to zero,
+			   resulting in an item that receives the specified proportion of the free space in the flex
+			   container. If all items in the flex container use this pattern, their sizes will be
+			   proportional to the specified flex factor. **/
+			flex: 0.9;
+			/** border: 1px solid red; **/
+		}
+
+		#logoImage {
+			margin: 10px;
+			flex: 0.1;
+			height: 4em;
+			/** border: 1px solid green; **/
+		}
+
+		/** menu **/
+		nav {
+			background-color: rgb(20, 90, 204);
+		}
+
+		nav>ul {
+			/** removes unwanted spaces **/
+			list-style: none;
+			padding: 8px;
+			margin: 0;
+		}
+
+		nav>ul li {
+			display: inline-block;
+			padding-right: 20px;
+		}
+
+		nav>ul li:nth-child(2) {
+			color: red;
+		}
+
+		/** topics **/
+		section:nth-child(2) h1 {
+			color: red;
+		}
+
+		section>h1 {
+			font-family: verdana;
+			font-size: 1.5em;
+		}
+
+		/** content **/
+		.content {
+			display: flex;
+			flex-direction: column;
+			margin: 10px;
+		}
+
+		/** footer **/
+		footer {
+			background-color: rgb(20, 90, 204);
+			display: flex;
+			justify-content: center;
+		}
+
+		footer ul {
+			list-style: none;
+			padding-left: 0;
+			/** removes list left indentation **/
+		}
+
+		footer>ul>li {
+			display: inline-block;
+		}
+
+		/** links  **/
+		/** ::after Selector -> Insert some text after the content of each element, inserting done with content attribute **/
+		a[href^=http]::after {
+			content: " (external)"
+		}
+
+		/**  images **/
+		section img {
+			width: 100px;
+			margin-right: 1em;
+			float: left;
+		}
+
+		section:nth-child(2n) img {
+			width: 100px;
+			margin-right: unset;
+			margin-left: 1em;
+			float: right
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1>CSS in Action</h1>
+		<img id="logoImage" src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg">
+	</header>
+	<nav>
+		<ul>
+			<li>Topic 1</li>
+			<li>Topic 2</li>
+			<li>Topic 3</li>
+			<li>Topic 4</li>
+		</ul>
+	</nav>
+	<div class="content">
+		<section>
+			<h1>Topic 1</h1>
+			<img src="pic1.jpg">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+			invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+			<p>
+				<strong>Lorem ipsum</strong> dolor sit <a href="http://www.aau.at" target="_blank">amet</a>, consetetur
+				sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam <a
+					href="erat.html" target="_blank">erat</a>.
+			</p>
+		</section>
+
+		<section>
+			<h1>Topic 2</h1>
+			<img src="pic2.jpg"> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+			invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+			<p>
+				Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam <strong>nonumy</strong> eirmod tempor
+				invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. Stet clita kasd gubergren, no sea
+				takimata sanctus est Lorem ipsum dolor sit <a href="http://www.aau.at" target="_blank">amet</a>.
+			</p>
+		</section>
+
+		<section>
+			<h1>Topic 3</h1>
+			<img src="pic3.jpg"> Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor
+			invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.
+			<p>
+				Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+				labore et dolore magna aliquyam erat, sed diam voluptua.
+			</p>
+		</section>
+	</div>
+	<footer>
+		<ul>
+			<li>Impressum</li>
+			<li>Legal</li>
+			<li>Contact</li>
+		</ul>
+	</footer>
+
+</body>
+
+</html>
