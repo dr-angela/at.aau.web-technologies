@@ -1,4 +1,4 @@
-'use strict'; // enables strict mode to catch common coding mistakes and unsafe actions
+'use strict';
 
 let products = []; // creates an empty list to hold information about the products
 
@@ -34,14 +34,19 @@ for (let pdiv of document.querySelectorAll("div.product")) {
 	cp.domElement = pdiv; // saves the product's HTML element for potential use later
 	products.push(cp); // adds this product object to the products array
 	
-	// function to handle adding the product to the cart
-	function addListener(e) {
-		console.log(e); // logs the event to the console for debugging purposes
+	// Anonymous function version 1: Standard anonymous function
+	let clickButton = pdiv.getElementsByClassName('buy')[0];
+	clickButton.addEventListener('click', function (e) { // directly setting an anonymous function as the event listener
+		console.log(e);
 		cp.numInCart += 1; // increments the number of this product in the cart
 		updateCart(); // calls updateCart to refresh the cart display
-	}
-		
-	// set up an event listener for the "add to cart" button
-	let clickButton = pdiv.getElementsByClassName('buy')[0]; // finds the add-to-cart button for this product
-	clickButton.addEventListener('click', addListener); // adds the click event listener to the button
+	});
+	
+	// Anonymous function version 2: Arrow function
+	// Uncomment this section if you prefer to use the arrow function
+	// clickButton.addEventListener('click', (e) => { // directly setting an arrow function as the event listener
+	// 	console.log(e);
+	// 	cp.numInCart += 1; // increments the number of this product in the cart
+	// 	updateCart(); // calls updateCart to refresh the cart display
+	// });
 }
