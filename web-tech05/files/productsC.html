@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+    <style>
+        body { font-family: Arial; }
+        .product { background-color: silver; margin-bottom: 10px; padding: 10px; }
+        .product > div { display: flex; }
+        .product h2 { font-size: 20px; flex-grow: 1; }
+        .product .desc { flex: 8; }
+        .product .buy { flex: 1; text-align: right; margin-left: 10px; }
+        .product .price { text-align: right; flex: 2; margin-left: 10px; }
+        #emptyCard { margin-top: 10px; }
+    </style>
+    <script src="productsC.js" defer></script> <!-- Link to productsC.js -->
+</head>
+<body>
+    <h1>Our Products</h1>
+
+    <!-- Product List -->
+    <div class="product" data-prodid="sonyA7V">
+        <h2>Sony A7V</h2>
+        <div>
+            <div class="desc">New model of Sony full-frame camera</div>
+            <div class="price">2500.00</div>
+            <div class="buy"><input type="button" value="Add to Cart"></div>
+        </div>
+    </div>
+
+    <div class="product" data-prodid="sonyLens24105">
+        <h2>Sony 24-105mm Lens</h2>
+        <div>
+            <div class="desc">Versatile lens for travel and portrait</div>
+            <div class="price">1300.00</div>
+            <div class="buy"><input type="button" value="Add to Cart"></div>
+        </div>
+    </div>
+
+    <div class="product" data-prodid="tamron1728">
+        <h2>Tamron 17-28mm</h2>
+        <div>
+            <div class="desc">Wide-angle lens for landscape photography</div>
+            <div class="price">800.00</div>
+            <div class="buy"><input type="button" value="Add to Cart"></div>
+        </div>
+    </div>
+
+    <div class="product" data-prodid="canon50mm">
+        <h2>Canon 50mm f/1.8</h2>
+        <div>
+            <div class="desc">Compact prime lens with great bokeh</div>
+            <div class="price">120.00</div>
+            <div class="buy"><input type="button" value="Add to Cart"></div>
+        </div>
+    </div>
+
+    <!-- Shopping Cart Section -->
+    <h2>Your Order</h2>
+    <ul id="orderedItems">
+        <!-- Cart items will be added here dynamically -->
+    </ul>
+    <div id="totalPrice">
+        Total: 0.00
+    </div>
+    <input id="emptyCard" type="button" value="Empty Shopping Cart"/>
+</body>
+</html>
