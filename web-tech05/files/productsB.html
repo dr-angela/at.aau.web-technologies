@@ -1,0 +1,62 @@
+<html>
+	<head>
+		<title>Products</title>
+		<style>
+		body {font-family:arial}
+		.product {background-color:silver;}
+		.product > div { display:flex;}
+		.product h2 {font-size: 20px; flex-direction:col; }
+		.product .desc {flex:8}
+		.product .buy {flex:1; text-align:right; margin-left:10px;}
+		.product .price {text-align:right; flex:2}
+		#emptyCard {margin-top:10px}
+		</style>
+		<script src="shopB.js" defer="true"></script>
+	</head>
+	<body>
+		<h1>Our Products</h1>
+		<div class="product" data-prodId="sonyAIV">
+			<h2>Sony Alpha IV</h2>
+			<div>
+				<div class="desc">New 2021 arrival, hot deal</div>
+				<div class="price">2890,00</div>
+				<div class="buy"><input type="button" value="add to cart"></div>
+			</div>
+		</div>
+		<div class="product" data-prodId="sony24105">
+			<h2>Sony 24-105mm lens</h2>
+			<div>
+				<div class="desc">Best Sony travel zoom</div>
+				<div class="price">1300,00</div>
+				<div class="buy"><input type="button" value="add to cart"></div>
+			</div>
+		</div>
+		<div class="product" data-prodId="NiconDX16400">
+			<h2>Nicon DX 16-600</h2>
+			<div>
+				<div class="desc">Nicon crop travel lens</div>
+				<div class="price">900,00</div>
+				<div class="buy"><input type="button" value="add to cart"></div>
+			</div>
+		</div>
+		<div class="product" data-prodId="tamron1724">
+			<h2>Tamron 17-24mm</h2>
+			<div>
+				<div class="desc">Full frame 17-14mm 2.8 lens</div>
+				<div class="price">800,00</div>
+				<div class="buy"><input type="button" value="add to cart"></div>
+			</div>
+		</div>
+		<div>
+			<h2>Your Order</h2>
+			<ul id="orderedItems">
+				<li>Prodcut 1 Price 1</li>
+				<li>...</li>
+			</ul>
+			<div id="totalPrice">
+			Total: price1+...+ProiceN
+			</div>
+			<input id="emptyCard" type="button" value="Empty Shopping Cart"/>
+		</div>
+	</body>
+</html>

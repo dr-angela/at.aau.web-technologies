@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const puzzleSource = document.getElementById("puzzleSource");
     const puzzleCells = document.querySelectorAll(".puzzlePic");
     const puzzlePieces = puzzleSource.querySelectorAll("img");
-    
+
     let placedPiecesCount = 0; // Counter for the number of placed images
 
     // Make each puzzle piece draggable
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Check puzzle completion only after all four images are placed
             if (placedPiecesCount === 4) {
-                checkPuzzleCompletion();
+                setTimeout(checkPuzzleCompletion, 1000);
             }
         });
     });
