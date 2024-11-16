@@ -14,7 +14,7 @@ function updateCart() {
 			let newP = document.createElement("li"); // Create a list item for the product
 			newP.appendChild(document.createTextNode(p.render())); // Display product details using the render() method
 			output.appendChild(newP); // Add this list item to the cart display
-			total += p.numInCart * p.price; // Calculate the running total price
+			total += p.numInCart * p.price; 
 		}
 	}
 	// Display the total price in the cart, rounded to 2 decimal places
@@ -52,7 +52,7 @@ for (let pdiv of document.querySelectorAll("div.product")) {
 	products.push(new Product(pdiv)); // Create a new Product instance and add it to the products array
 }
 
-// Add event listener for the "Empty Shopping Cart" button
+// Add event listener for the Empty Shopping Cart button
 let emptyCartButton = document.getElementById("emptyCard");
 if (emptyCartButton) {
 	emptyCartButton.addEventListener('click', () => {

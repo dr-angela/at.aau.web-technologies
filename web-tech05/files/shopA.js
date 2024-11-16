@@ -21,18 +21,18 @@ function updateCart() {
 	document.getElementById("totalPrice").innerHTML = total.toFixed(2); // Display total price
 }
 
-// Find or create a container specifically for products
+// create a container for products
 let productsContainer = document.getElementById("productsContainer");
 if (!productsContainer) {
 	productsContainer = document.createElement("div");
 	productsContainer.id = "productsContainer";
 	// Move all product divs into this container
 	document.querySelectorAll("div.product").forEach(productDiv => productsContainer.appendChild(productDiv));
-	// Insert the container at the original products' location
+	// Insert the container at the original products location
 	document.body.insertBefore(productsContainer, document.getElementById("emptyCard").parentNode);
 }
 
-// Loop through each product section in the HTML and extract data
+// Loop through each product section in the HTML for extract data
 for (let pdiv of document.querySelectorAll("div.product")) {
 	let cp = {}; // Object to store product details
 	

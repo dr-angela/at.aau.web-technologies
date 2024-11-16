@@ -48,6 +48,7 @@ class Video extends Image {
 
     // Override print() to include video specific properties
     print() {
+        console.log("\n--- Video Properties ---");
         super.print(); // Call the print method from Image
         console.log("Duration (seconds):", this.duration);
         console.log("Framerate (fps):", this.framerate);
