@@ -1,0 +1,23 @@
+[
+	{
+	"id":"sonyAIV",
+	"title":"Sony Alpha IV",
+	"desc":"New 2021 arrival, hot deal",
+	"price":2890
+	},
+	{"id":"sony24105",
+	"title":"Sony 24-105mm lens",
+	"desc":"Best Sony travel zoom",
+	"price":1300
+	},
+	{"id":"NiconDX16400",
+	"title":"Nicon DX 16-600",
+	"desc":"Nicon crop travel lens",
+	"price":900
+	},
+	{"id":"tamron1724",
+	"title":"Tamron 17-24mm",
+	"desc":"Full frame 17-14mm 2.8 lens",
+	"price":800
+	}
+]
