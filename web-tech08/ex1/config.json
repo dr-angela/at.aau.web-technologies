@@ -1,0 +1,12 @@
+{
+    "database": {
+        "host": "localhost",
+        "user": "your_user",
+        "password": "your_password",
+        "db": "webtech24jwt"
+    },
+	"auth": {
+        "jwt_key": "secret",
+        "expiration": "1h"
+    }
+}
