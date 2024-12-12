@@ -1,1 +1,17 @@
 <h1>{{ applicationName }} is running</h1>
+
+  <!-- Loops through the products array from .ts and creates a block for each product -->
+<div *ngFor="let product of products" class="product">
+  <!-- This is point 8 in 6.1-->
+  <h2 [style.color]="product.likes && product.likes > 0 ? 'green' : 'black'" >
+    {{ product.name }} <span *ngIf="product.likes && product.likes > 0" >(liked)</span>
+  </h2>     <!-- above checks if likes are given, because it is optional-->
+  <ul>
+    <!-- Creates an unordered list for the products tags -->
+    <li *ngFor="let tag of product.tags">{{ tag }}</li>
+  </ul>
+  <!-- Displays the number of likes for the product, if it has any -->
+  <p *ngIf="product.likes">Likes: {{ product.likes }}</p>
+</div>
+
+
